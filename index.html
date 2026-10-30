@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafewWll Pest Control Solutions - সাফওয়াল পেস্ট কন্ট্রোল সলিউশন</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        dark: {
+                            800: '#1a1a2e',
+                            900: '#0f0f1a',
+                            950: '#080812',
+                        }
+                    },
+                    fontFamily: {
+                        bengali: ['Noto Sans Bengali', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Noto Sans Bengali', sans-serif; }
+        html { scroll-behavior: smooth; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.6); }
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-slideInLeft { animation: slideInLeft 0.8s ease-out forwards; }
+        .animate-slideInRight { animation: slideInRight 0.8s ease-out forwards; }
+        .animate-scaleIn { animation: scaleIn 0.6s ease-out forwards; }
+        .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+        .animate-marquee { animation: marquee 30s linear infinite; }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+
+        .hidden-animate { opacity: 0; }
+
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(15,15,26,0.92) 0%, rgba(20,83,45,0.85) 100%),
+                        url('https://picsum.photos/seed/pestcontrol-hero/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+        .service-card:hover .service-icon svg { color: white; }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .nav-scrolled {
+            background: rgba(15, 15, 26, 0.95) !important;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .toast {
+            transform: translateX(120%);
+            transition: transform 0.4s ease;
+        }
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f0f1a; }
+        ::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #16a34a; }
+
+        .process-line {
+            background: linear-gradient(to bottom, #22c55e, transparent);
+        }
+
+        .bg-mesh {
+            background-image: 
+                radial-gradient(at 20% 20%, rgba(34, 197, 94, 0.08) 0px, transparent 50%),
+                radial-gradient(at 80% 80%, rgba(22, 163, 74, 0.06) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(34, 197, 94, 0.03) 0px, transparent 70%);
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-white overflow-x-hidden">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast fixed top-6 right-6 z-[10000] bg-brand-600 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+        <i data-lucide="check-circle" class="w-5 h-5"></i>
+        <span id="toast-message">বার্তা সফলভাবে পাঠানো হয়েছে!</span>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="bg-brand-700 text-white text-sm py-2 px-4 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-6">
+                <a href="tel:+880 1738-484235" class="flex items-center gap-2 hover:text-brand-200 transition-colors">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                    <span>+880 1738-484235</span>
+                </a>
+                <a href="mailto:info@rbpestcontrolbd.com" class="hidden md:flex items-center gap-2 hover:text-brand-200 transition-colors">
+                    <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                    <span>info@safewallpestbd.com</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="hidden sm:inline">সোমবার - শনিবার: সকাল ৯টা - সন্ধ্যা ৮টা</span>
+                <div class="flex items-center gap-3 ml-4">
+                    <a href="#" class="hover:text-brand-200 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-brand-200 transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-brand-200 transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="sticky top-0 z-[1000] transition-all duration-500 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-700 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:shadow-brand-500/40 transition-shadow">
+                    <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold leading-tight">SafeWall Pest Control Solutions </h1>
+                    <p class="text-[10px] text-brand-400 tracking-widest uppercase">বাংলাদেশ</p>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#home" class="text-sm font-medium text-white/80 hover:text-brand-400 transition-colors">হোম</a>
+                <a href="#about" class="text-sm font-medium text-white/80 hover:text-brand-400 transition-colors">আমাদের সম্পর্কে</a>
+                <a href="#services" class="text-sm font-medium text-white/80 hover:text-brand-400 transition-colors">সেবাসমূহ</a>
+                <a href="#process" class="text-sm font-medium text-white/80 hover:text-brand-400 transition-colors">কিভাবে কাজ করি</a>
+                <a href="#gallery" class="text-sm font-medium text-white/80 hover:text-brand-400 transition-colors">গ্যালারি</a>
+                <a href="#testimonials" class="text-sm font-medium text-white/80 hover:text-brand-400 transition-colors">রিভিউ</a>
+                <a href="#contact" class="text-sm font-medium text-white/80 hover:text-brand-400 transition-colors">যোগাযোগ</a>
+            </div>
+
+            <!-- CTA + Mobile -->
+            <div class="flex items-center gap-4">
+                <a href="tel:+8801738484235" class="hidden md:flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-brand-600/20 hover:shadow-brand-500/40">
+                    <i data-lucide="phone-call" class="w-4 h-4"></i>
+                    কল করুন
+                </a>
+                <button id="mobile-toggle" class="lg:hidden text-white p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-dark-900/98 backdrop-blur-xl border-t border-white/5">
+            <div class="px-6 py-6 space-y-4">
+                <a href="#home" class="block text-sm font-medium text-white/80 hover:text-brand-400 transition-colors py-2 mobile-link">হোম</a>
+                <a href="#about" class="block text-sm font-medium text-white/80 hover:text-brand-400 transition-colors py-2 mobile-link">আমাদের সম্পর্কে</a>
+                <a href="#services" class="block text-sm font-medium text-white/80 hover:text-brand-400 transition-colors py-2 mobile-link">সেবাসমূহ</a>
+                <a href="#process" class="block text-sm font-medium text-white/80 hover:text-brand-400 transition-colors py-2 mobile-link">কিভাবে কাজ করি</a>
+                <a href="#gallery" class="block text-sm font-medium text-white/80 hover:text-brand-400 transition-colors py-2 mobile-link">গ্যালারি</a>
+                <a href="#testimonials" class="block text-sm font-medium text-white/80 hover:text-brand-400 transition-colors py-2 mobile-link">রিভিউ</a>
+                <a href="#contact" class="block text-sm font-medium text-white/80 hover:text-brand-400 transition-colors py-2 mobile-link">যোগাযোগ</a>
+                <a href="tel:+8801738484235" class="flex items-center justify-center gap-2 bg-brand-600 text-white px-5 py-3 rounded-full text-sm font-semibold mt-4">
+                    <i data-lucide="phone-call" class="w-4 h-4"></i>
+                    কল করুন
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg relative min-h-[90vh] flex items-center">
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-brand-600/5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <div class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/20 rounded-full px-4 py-2 mb-6 animate-fadeInUp">
+                    <span class="w-2 h-2 bg-brand-400 rounded-full animate-pulse"></span>
+                    <span class="text-brand-400 text-sm font-medium">বাংলাদেশের বিশ্বস্ত পেস্ট কন্ট্রোল সেবা</span>
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fadeInUp delay-100">
+                    আপনার ঘরকে রাখুন 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-200">পোকামাকড় মুক্ত</span>
+                </h2>
+                
+                <p class="text-lg text-white/60 mb-8 max-w-lg animate-fadeInUp delay-200">
+                    আধুনিক প্রযুক্তি ও অভিজ্ঞ দল নিয়ে আপনার বাসস্থান ও কর্মক্ষেত্র পোকামাকড় মুক্ত করি। ১০০% গ্যারান্টিসহ সেবা প্রদান করি।
+                </p>
+                
+                <div class="flex flex-wrap gap-4 mb-10 animate-fadeInUp delay-300">
+                    <a href="#contact" class="group flex items-center gap-2 bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white px-8 py-4 rounded-full text-base font-semibold transition-all shadow-xl shadow-brand-600/25 hover:shadow-brand-500/40">
+                        ফ্রি কনসালটেশন
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#services" class="flex items-center gap-2 border border-white/20 hover:border-brand-500/50 hover:bg-brand-500/5 text-white px-8 py-4 rounded-full text-base font-semibold transition-all">
+                        <i data-lucide="play-circle" class="w-5 h-5 text-brand-400"></i>
+                        আমাদের সেবা দেখুন
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-6 animate-fadeInUp delay-400">
+                    <div>
+                        <div class="text-3xl font-bold text-brand-400 counter" data-target="1000">০</div>
+                        <div class="text-sm text-white/50 mt-1">সন্তুষ্ট গ্রাহক</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-brand-400 counter" data-target="10">০</div>
+                        <div class="text-sm text-white/50 mt-1">বছরের অভিজ্ঞতা</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-brand-400 counter" data-target="100">০</div>
+                        <div class="text-sm text-white/50 mt-1">শতভাগ গ্যারান্টি</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative hidden lg:block animate-slideInRight delay-300">
+                <div class="relative">
+                    <img src="https://picsum.photos/seed/pest-service-hero/600/700.jpg" alt="Pest Control Service" class="rounded-3xl shadow-2xl shadow-black/50 object-cover w-full h-[550px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-950/60 via-transparent to-transparent rounded-3xl"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white/40 hover:text-brand-400 transition-colors">
+                <i data-lucide="chevron-down" class="w-8 h-8"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Marquee Section -->
+    <div class="bg-brand-600 py-3 overflow-hidden">
+        <div class="animate-marquee whitespace-nowrap flex items-center gap-8">
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> তেলাপোকা দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> উকুন দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> পিঁপড়া দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> ইঁদুর দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> মশা দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> দুমর দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> টার্মাইট দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> তেলাপোকা দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> উকুন দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> পিঁপড়া দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> ইঁদুর দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> মশা দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> দুমর দমন</span>
+            <span class="text-white/50">✦</span>
+            <span class="text-white font-semibold text-sm flex items-center gap-3"><i data-lucide="check-circle" class="w-4 h-4"></i> টার্মাইট দমন</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-mesh relative">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Image Side -->
+            <div class="relative scroll-animate">
+                <div class="relative">
+                    <img src="https://picsum.photos/seed/pest-about-team/600/500.jpg" alt="আমাদের দল" class="rounded-3xl shadow-2xl object-cover w-full h-[450px]">
+                    <div class="absolute inset-0 bg-gradient-to-r from-dark-950/30 to-transparent rounded-3xl"></div>
+                </div>
+            </div>
+
+            <!-- Content Side -->
+            <div class="scroll-animate">
+                <div class="inline-flex items-center gap-2 text-brand-400 text-sm font-semibold mb-4">
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                    আমাদের সম্পর্কে
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                    বাংলাদেশের অন্যতম শীর্ষ 
+                    <span class="text-brand-400">পেস্ট কন্ট্রোল</span> কোম্পানি
+                </h2>
+                <p class="text-white/60 mb-6 leading-relaxed">
+                    SafeWall দীর্ঘ ১০ বছরেরও বেশি সময় ধরে বাংলাদেশে পেস্ট কন্ট্রোল সেবা প্রদান করে আসছে। আমরা আন্তর্জাতিক মানের ওষুধ ও আধুনিক প্রযুক্তি ব্যবহার করে আপনার বাড়ি, অফিস ও কারখানাকে পোকামাকড়মুক্ত করি।
+                </p>
+                <p class="text-white/60 mb-8 leading-relaxed">
+                    আমাদের দলে রয়েছে প্রশিক্ষিত ও অভিজ্ঞ টেকনিশিয়ান যারা আপনার সমস্যা সঠিকভাবে চিহ্নিত করে সঠিক সমাধান দিতে সক্ষম।
+                </p>
+
+                <!-- Features -->
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-brand-500/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="check" class="w-4 h-4 text-brand-400"></i>
+                        </div>
+                        <span class="text-sm text-white/70">অনুমোদিত ওষুধ ব্যবহার</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-brand-500/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="check" class="w-4 h-4 text-brand-400"></i>
+                        </div>
+                        <span class="text-sm text-white/70">প্রশিক্ষিত টেকনিশিয়ান</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-brand-500/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="check" class="w-4 h-4 text-brand-400"></i>
+                        </div>
+                        <span class="text-sm text-white/70">১০০% সন্তুষ্টি গ্যারান্টি</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-brand-500/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="check" class="w-4 h-4 text-brand-400"></i>
+                        </div>
+                        <span class="text-sm text-white/70">সাশ্রয়ী মূল্য</span>
+                    </div>
+                </div>
+
+                <a href="#contact" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all shadow-lg shadow-brand-600/20">
+                    বিস্তারিত জানুন
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-dark-900 relative">
+        <div class="absolute inset-0 bg-mesh"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <!-- Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-animate">
+                <div class="inline-flex items-center gap-2 text-brand-400 text-sm font-semibold mb-4">
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                    আমাদের সেবাসমূহ
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    আমরা যেসব <span class="text-brand-400">পেস্ট কন্ট্রোল</span> সেবা দিই
+                </h2>
+                <p class="text-white/50">আপনার সকল ধরনের পোকামাকড় সমস্যার সমাধান আমাদের কাছে আছে</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card group bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 hover:bg-white/[0.06] hover:border-brand-500/20 transition-all duration-500 scroll-animate">
+                    <div class="service-icon w-16 h-16 bg-brand-500/10 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500">
+                        <i data-lucide="bug" class="w-8 h-8 text-brand-400 transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">তেলাপোকা দমন</h3>
+                    <p class="text-white/50 text-sm leading-relaxed mb-4">gel bait, spray ও অন্যান্য আধুনিক পদ্ধতিতে তেলাপোকা দমন সেবা। রান্নাঘর, বাথরুমসহ সর্বত্র।</p>
+                    <a href="#contact" class="text-brand-400 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        বিস্তারিত <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card group bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 hover:bg-white/[0.06] hover:border-brand-500/20 transition-all duration-500 scroll-animate">
+                    <div class="service-icon w-16 h-16 bg-brand-500/10 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500">
+                        <i data-lucide="bed-double" class="w-8 h-8 text-brand-400 transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">বিছানার উকুন দমন</h3>
+                    <p class="text-white/50 text-sm leading-relaxed mb-4">স্টিম ট্রিটমেন্ট ও রাসায়নিক স্প্রে দিয়ে বিছানার উকুন সম্পূর্ণ নির্মূল করা হয়।</p>
+                    <a href="#contact" class="text-brand-400 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        বিস্তারিত <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card group bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 hover:bg-white/[0.06] hover:border-brand-500/20 transition-all duration-500 scroll-animate">
+                    <div class="service-icon w-16 h-16 bg-brand-500/10 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500">
+                        <i data-lucide="mouse" class="w-8 h-8 text-brand-400 transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">ইঁদুর দমন</h3>
+                    <p class="text-white/50 text-sm leading-relaxed mb-4">ট্র্যাপ, বেইট স্টেশন ও গ্লু বোর্ড ব্যবহার করে ইঁদুর দমন করা হয়। বাসা ও কারখানার জন্য।</p>
+                    <a href="#contact" class="text-brand-400 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        বিস্তারিত <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card group bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 hover:bg-white/[0.06] hover:border-brand-500/20 transition-all duration-500 scroll-animate">
+                    <div class="service-icon w-16 h-16 bg-brand-500/10 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500">
+                        <i data-lucide="mosquito" class="w-8 h-8 text-brand-400 transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">মশা দমন</h3>
+                    <p class="text-white/50 text-sm leading-relaxed mb-4">ফগিং, লার্ভিসাইডিং ও ব্রিডিং সাইট ট্রিটমেন্ট করে মশা নিয়ন্ত্রণ করা হয়।</p>
+                    <a href="#contact" class="text-brand-400 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        বিস্তারিত <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card group bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 hover:bg-white/[0.06] hover:border-brand-500/20 transition-all duration-500 scroll-animate">
+                    <div class="service-icon w-16 h-16 bg-brand-500/10 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500">
+                        <i data-lucide="home" class="w-8 h-8 text-brand-400 transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">টার্মাইট/দুমর দমন</h3>
+                    <p class="text-white/50 text-sm leading-relaxed mb-4">মাটির নিচে ও কাঠের ভেতরের টার্মাইট দমনে ড্রিলিং ও ইনজেকশন পদ্ধতি ব্যবহার করা হয়।</p>
+                    <a href="#contact" class="text-brand-400 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        বিস্তারিত <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card group bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 hover:bg-white/[0.06] hover:border-brand-500/20 transition-all duration-500 scroll-animate">
+                    <div class="service-icon w-16 h-16 bg-brand-500/10 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500">
+                        <i data-lucide="factory" class="w-8 h-8 text-brand-400 transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">শিল্প পেস্ট কন্ট্রোল</h3>
+                    <p class="text-white/50 text-sm leading-relaxed mb-4">কারখানা, গুদাম ও শিল্প এলাকায় বিশেষায়িত পেস্ট ম্যানেজমেন্ট সেবা প্রদান।</p>
+                    <a href="#contact" class="text-brand-400 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        বিস্তারিত <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-dark-950 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-500/20 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-animate">
+                <div class="inline-flex items-center gap-2 text-brand-400 text-sm font-semibold mb-4">
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                    কেন আমাদের বেছে নেবেন
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    আমাদের <span class="text-brand-400">বিশেষত্ব</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center scroll-animate group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-brand-500/20 to-brand-600/5 border border-brand-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 group-hover:border-brand-500/30 transition-all duration-500">
+                        <i data-lucide="shield-check" class="w-10 h-10 text-brand-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">নিরাপদ ওষুধ</h3>
+                    <p class="text-white/50 text-sm">WHO অনুমোদিত ও পরিবেশবান্ধব ওষুধ ব্যবহার করা হয়</p>
+                </div>
+
+                <div class="text-center scroll-animate group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-brand-500/20 to-brand-600/5 border border-brand-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 group-hover:border-brand-500/30 transition-all duration-500">
+                        <i data-lucide="users" class="w-10 h-10 text-brand-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">অভিজ্ঞ দল</h3>
+                    <p class="text-white/50 text-sm">১৫+ বছরের অভিজ্ঞতাসম্পন্ন প্রশিক্ষিত টেকনিশিয়ান</p>
+                </div>
+
+                <div class="text-center scroll-animate group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-brand-500/20 to-brand-600/5 border border-brand-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 group-hover:border-brand-500/30 transition-all duration-500">
+                        <i data-lucide="clock" class="w-10 h-10 text-brand-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">দ্রুত সেবা</h3>
+                    <p class="text-white/50 text-sm">কল করলেই ২৪ ঘণ্টার মধ্যে সেবা পৌঁছে যায়</p>
+                </div>
+
+                <div class="text-center scroll-animate group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-brand-500/20 to-brand-600/5 border border-brand-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 group-hover:border-brand-500/30 transition-all duration-500">
+                        <i data-lucide="badge-check" class="w-10 h-10 text-brand-400"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">গ্যারান্টি</h3>
+                    <p class="text-white/50 text-sm">১০০% সন্তুষ্টি গ্যারান্টি ও ফলো-আপ সেবা</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 bg-dark-900 relative">
+        <div class="absolute inset-0 bg-mesh"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-animate">
+                <div class="inline-flex items-center gap-2 text-brand-400 text-sm font-semibold mb-4">
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                    কিভাবে কাজ করি
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    আমাদের <span class="text-brand-400">কাজের প্রক্রিয়া</span>
+                </h2>
+                <p class="text-white/50">মাত্র ৪টি সহজ ধাপে আপনার সমস্যার সমাধান</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                <!-- Connecting line (desktop) -->
+                <div class="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-[2px] bg-gradient-to-r from-brand-500/50 via-brand-500/30 to-brand-500/50"></div>
+
+                <!-- Step 1 -->
+                <div class="text-center scroll-animate relative">
+                    <div class="w-14 h-14 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold relative z-10 shadow-lg shadow-brand-600/30">১</div>
+                    <h3 class="font-bold text-lg mb-2">যোগাযোগ করুন</h3>
+                    <p class="text-white/50 text-sm">ফোন বা মেসেজে আমাদের সাথে যোগাযোগ করুন ও সমস্যা জানান</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center scroll-animate relative">
+                    <div class="w-14 h-14 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold relative z-10 shadow-lg shadow-brand-600/30">২</div>
+                    <h3 class="font-bold text-lg mb-2">পরিদর্শন</h3>
+                    <p class="text-white/50 text-sm">আমাদের বিশেষজ্ঞ আপনার বাড়ি/অফিস পরিদর্শন করবেন</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center scroll-animate relative">
+                    <div class="w-14 h-14 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold relative z-10 shadow-lg shadow-brand-600/30">৩</div>
+                    <h3 class="font-bold text-lg mb-2">ট্রিটমেন্ট</h3>
+                    <p class="text-white/50 text-sm">আধুনিক পদ্ধতিতে পেস্ট কন্ট্রোল ট্রিটমেন্ট প্রদান</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center scroll-animate relative">
+                    <div class="w-14 h-14 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold relative z-10 shadow-lg shadow-brand-600/30">৪</div>
+                    <h3 class="font-bold text-lg mb-2">ফলো-আপ</h3>
+                    <p class="text-white/50 text-sm">নির্দিষ্ট সময় পর ফলো-আপ ভিজিট ও গ্যারান্টি সেবা</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-dark-950 relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-500/20 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-animate">
+                <div class="inline-flex items-center gap-2 text-brand-400 text-sm font-semibold mb-4">
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                    আমাদের কাজ
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    কাজের <span class="text-brand-400">গ্যালারি</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item relative rounded-2xl overflow-hidden group cursor-pointer scroll-animate col-span-2 row-span-2">
+                    <img src="https://picsum.photos/seed/pest-gal1/800/800.jpg" alt="কাজের ছবি" class="w-full h-full object-cover transition-transform duration-700 min-h-[300px]">
+                    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-dark-950/80 via-dark-950/20 to-transparent opacity-0 transition-opacity duration-500 flex items-end p-6">
+                        <div>
+                            <h4 class="font-bold text-lg">আবাসিক পেস্ট কন্ট্রোল</h4>
+                            <p class="text-white/60 text-sm">ঢাকা, বাংলাদেশ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative rounded-2xl overflow-hidden group cursor-pointer scroll-animate">
+                    <img src="https://picsum.photos/seed/pest-gal2/400/400.jpg" alt="কাজের ছবি" class="w-full h-full object-cover transition-transform duration-700 aspect-square">
+                    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-dark-950/80 via-dark-950/20 to-transparent opacity-0 transition-opacity duration-500 flex items-end p-4">
+                        <div>
+                            <h4 class="font-bold">টার্মাইট ট্রিটমেন্ট</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative rounded-2xl overflow-hidden group cursor-pointer scroll-animate">
+                    <img src="https://picsum.photos/seed/pest-gal3/400/400.jpg" alt="কাজের ছবি" class="w-full h-full object-cover transition-transform duration-700 aspect-square">
+                    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-dark-950/80 via-dark-950/20 to-transparent opacity-0 transition-opacity duration-500 flex items-end p-4">
+                        <div>
+                            <h4 class="font-bold">মশা ফগিং</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative rounded-2xl overflow-hidden group cursor-pointer scroll-animate">
+                    <img src="https://picsum.photos/seed/pest-gal4/400/400.jpg" alt="কাজের ছবি" class="w-full h-full object-cover transition-transform duration-700 aspect-square">
+                    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-dark-950/80 via-dark-950/20 to-transparent opacity-0 transition-opacity duration-500 flex items-end p-4">
+                        <div>
+                            <h4 class="font-bold">ইঁদুর কন্ট্রোল</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative rounded-2xl overflow-hidden group cursor-pointer scroll-animate">
+                    <img src="https://picsum.photos/seed/pest-gal5/400/400.jpg" alt="কাজের ছবি" class="w-full h-full object-cover transition-transform duration-700 aspect-square">
+                    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-dark-950/80 via-dark-950/20 to-transparent opacity-0 transition-opacity duration-500 flex items-end p-4">
+                        <div>
+                            <h4 class="font-bold">কারখানা ট্রিটমেন্ট</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-dark-900 relative">
+        <div class="absolute inset-0 bg-mesh"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-animate">
+                <div class="inline-flex items-center gap-2 text-brand-400 text-sm font-semibold mb-4">
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                    গ্রাহকদের মতামত
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    আমাদের গ্রাহকরা <span class="text-brand-400">কি বলেন</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 hover:border-brand-500/20 transition-all duration-500 scroll-animate">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">"অসাধারণ সেবা! তেলাপোকার যে সমস্যা ছিল তা একদম দূর হয়ে গেছে। টেকনিশিয়ানরা খুবই পেশাদার ও বিনয়ী। অনেক ধন্যবাদ SafeWall Pest Control Solution!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-brand-500/20 rounded-full flex items-center justify-center">
+                            <span class="text-brand-400 font-bold">র</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-sm">রহিমা বেগম</div>
+                            <div class="text-white/40 text-xs">ঢাকা, মিরপুর</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 hover:border-brand-500/20 transition-all duration-500 scroll-animate">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">"আমাদের অফিসে ইঁদুরের ব্যাপক সমস্যা ছিল। SafeWall Pest Control Solution একবার সার্ভিস দেওয়ার পর থেকে সম্পূর্ণ সমস্যামুক্ত। আমি তাদের সবাইকে রেকমেন্ড করি।"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-brand-500/20 rounded-full flex items-center justify-center">
+                            <span class="text-brand-400 font-bold">ক</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-sm">কামরুল হাসান</div>
+                            <div class="text-white/40 text-xs">ঢাকা, গুলশান</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 hover:border-brand-500/20 transition-all duration-500 scroll-animate">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">"বিছানার উকুনের জন্য অনেক কষ্ট পেয়েছি। অনেক জায়গায় সার্ভিস নিয়েছি কিন্তু কোনো লাভ হয়নি। RB এর সার্ভিসের পর সম্পূর্ণ ভালো আছি।"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-brand-500/20 rounded-full flex items-center justify-center">
+                            <span class="text-brand-400 font-bold">ফ</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-sm">ফাতেমা আক্তার</div>
+                            <div class="text-white/40 text-xs">চট্টগ্রাম</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-700 to-brand-900"></div>
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/pest-cta-bg/1920/600.jpg')] bg-cover bg-center opacity-10"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-black/10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 scroll-animate">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">পোকামাকড় মুক্ত জীবন শুরু করুন আজই!</h2>
+            <p class="text-white/70 text-lg mb-8 max-w-2xl mx-auto">ফ্রি পরিদর্শন ও কোটেশনের জন্য এখনই আমাদের সাথে যোগাযোগ করুন</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="tel:+880 1738-484235" class="flex items-center gap-2 bg-white text-brand-700 px-8 py-4 rounded-full text-base font-bold hover:bg-white/90 transition-all shadow-xl">
+                    <i data-lucide="phone-call" class="w-5 h-5"></i>
+                    এখনই কল করুন
+                </a>
+                <a href="#contact" class="flex items-center gap-2 border-2 border-white/40 hover:border-white text-white px-8 py-4 rounded-full text-base font-bold transition-all">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    মেসেজ করুন
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-dark-950 relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-500/20 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-animate">
+                <div class="inline-flex items-center gap-2 text-brand-400 text-sm font-semibold mb-4">
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                    যোগাযোগ
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    আমাদের সাথে <span class="text-brand-400">যোগাযোগ</span> করুন
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-10">
+                <!-- Contact Info -->
+                <div class="lg:col-span-2 space-y-6 scroll-animate">
+                    <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 hover:border-brand-500/20 transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-brand-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">অফিসের ঠিকানা</h4>
+                                <p class="text-white/50 text-sm">ka-62,kha-para, vai vai sofiruddin road, khilkhet, Dhaka-1229</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 hover:border-brand-500/20 transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-6 h-6 text-brand-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">ফোন নম্বর</h4>
+                                <a href="tel:+8801738484235" class="text-brand-400 text-sm hover:text-brand-300 transition-colors">+880 1738-484235</a><br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 hover:border-brand-500/20 transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-6 h-6 text-brand-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">ইমেইল</h4>
+                                <a href="mailto:safewall.pest@gmail.com" class="text-brand-400 text-sm hover:text-brand-300 transition-colors">safewall.pest@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 hover:border-brand-500/20 transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="clock" class="w-6 h-6 text-brand-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">কার্যসময়</h4>
+                                <p class="text-white/50 text-sm">সোমবার - শনিবার</p>
+                                <p class="text-white/50 text-sm">সকাল ৯:০০ - সন্ধ্যা ৮:০০</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-3 scroll-animate">
+                    <form id="contact-form" class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8">
+                        <div class="grid md:grid-cols-2 gap-5 mb-5">
+                            <div>
+                                <label class="text-sm text-white/60 mb-2 block">আপনার নাম *</label>
+                                <input type="text" required class="w-full bg-white/[0.05] border border-white/[0.1] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-brand-500/50 focus:bg-white/[0.08] transition-all" placeholder="নাম লিখুন">
+                            </div>
+                            <div>
+                                <label class="text-sm text-white/60 mb-2 block">ফোন নম্বর *</label>
+                                <input type="tel" required class="w-full bg-white/[0.05] border border-white/[0.1] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-brand-500/50 focus:bg-white/[0.08] transition-all" placeholder="০১XXXXXXXXX">
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <label class="text-sm text-white/60 mb-2 block">আপনার ঠিকানা</label>
+                            <input type="text" class="w-full bg-white/[0.05] border border-white/[0.1] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-brand-500/50 focus:bg-white/[0.08] transition-all" placeholder="এলাকা, শহর">
+                        </div>
+                        <div class="mb-5">
+                            <label class="text-sm text-white/60 mb-2 block">কোন সেবা চান?</label>
+                            <select class="w-full bg-white/[0.05] border border-white/[0.1] rounded-xl px-4 py-3 text-sm text-white/60 focus:outline-none focus:border-brand-500/50 focus:bg-white/[0.08] transition-all appearance-none cursor-pointer">
+                                <option value="">সেবা নির্বাচন করুন</option>
+                                <option value="cockroach">তেলাপোকা দমন</option>
+                                <option value="bedbug">বিছানার উকুন দমন</option>
+                                <option value="rat">ইঁদুর দমন</option>
+                                <option value="mosquito">মশা দমন</option>
+                                <option value="termite">টার্মাইট/দুমর দমন</option>
+                                <option value="ant">পিঁপড়া দমন</option>
+                                <option value="industrial">শিল্প পেস্ট কন্ট্রোল</option>
+                                <option value="other">অন্যান্য</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="text-sm text-white/60 mb-2 block">বিস্তারিত লিখুন</label>
+                            <textarea rows="4" class="w-full bg-white/[0.05] border border-white/[0.1] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-brand-500/50 focus:bg-white/[0.08] transition-all resize-none" placeholder="আপনার সমস্যা বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white py-4 rounded-xl text-base font-bold transition-all shadow-lg shadow-brand-600/20 hover:shadow-brand-500/40 flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            মেসেজ পাঠান
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-dark-900 relative">
+        <div class="absolute inset-0 bg-mesh"></div>
+        <div class="max-w-3xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 scroll-animate">
+                <div class="inline-flex items-center gap-2 text-brand-400 text-sm font-semibold mb-4">
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                    সাধারণ প্রশ্ন
+                    <span class="w-8 h-[2px] bg-brand-500"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold">
+                    প্রায়শই জিজ্ঞাসিত <span class="text-brand-400">প্রশ্নোত্তর</span>
+                </h2>
+            </div>
+
+            <div class="space-y-3" id="faq-container">
+                <div class="faq-item bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden scroll-animate">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-colors">
+                        <span class="font-semibold text-sm pr-4">পেস্ট কন্ট্রোল সেবা নেওয়ার পর কতদিন পর্যন্ত কার্যকর থাকে?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-brand-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-white/50 text-sm leading-relaxed">এটি পেস্টের ধরন এবং ট্রিটমেন্টের উপর নির্ভর করে। সাধারণত তেলাপোকা ট্রিটমেন্ট ৩-৬ মাস, টার্মাইট ট্রিটমেন্ট ৫-১০ বছর এবং মশা নিয়ন্ত্রণ ১-৩ মাস কার্যকর থাকে।</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden scroll-animate">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-colors">
+                        <span class="font-semibold text-sm pr-4">ওষুধ কি বাচ্চা ও পোষা প্রাণীর জন্য নিরাপদ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-brand-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-white/50 text-sm leading-relaxed">হ্যাঁ, আমরা WHO অনুমোদিত ও পরিবেশবান্ধব ওষুধ ব্যবহার করি যা মানুষ ও পোষা প্রাণীর জন্য নিরাপদ। তবে ট্রিটমেন্টের সময় কিছু সতর্কতা অবলম্বন করতে হবে যা আমাদের টেকনিশিয়ান আপনাকে জানিয়ে দেবেন।</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden scroll-animate">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-colors">
+                        <span class="font-semibold text-sm pr-4">ট্রিটমেন্টের আগে কি কি প্রস্তুতি নিতে হবে?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-brand-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-white/50 text-sm leading-relaxed">খাবার সামগ্রী ঢেকে রাখুন, পানির পাত্র ঢেকে রাখুন, রান্নাঘর পরিষ্কার করুন এবং ছোট বাচ্চা ও পোষা প্রাণী অন্য ঘরে রাখুন। বিস্তারিত নির্দেশনা আমাদের টেকনিশিয়ান দেবেন।</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden scroll-animate">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-colors">
+                        <span class="font-semibold text-sm pr-4">পেমেন্ট পদ্ধতি কি কি?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-brand-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-white/50 text-sm leading-relaxed">আমরা ক্যাশ, বিকাশ, নগদ, রকেট এবং ব্যাংক ট্রান্সফারে পেমেন্ট গ্রহণ করি। কর্পোরেট ক্লায়েন্টদের জন্য ক্রেডিট সুবিধাও আছে।</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden scroll-animate">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-colors">
+                        <span class="font-semibold text-sm pr-4">ঢাকার বাইরে সেবা পাওয়া যায় কি?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-brand-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-white/50 text-sm leading-relaxed">হ্যাঁ, আমরা সারা বাংলাদেশে সেবা প্রদান করি। ঢাকার ভেতরে সাধারণ চার্জে এবং ঢাকার বাইরে ট্রান্সপোর্ট চার্জ সহ সেবা দেওয়া হয়।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-11 h-11 bg-gradient-to-br from-brand-500 to-brand-700 rounded-xl flex items-center justify-center">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg leading-tight">SafeWall Pest Control Solution</h3>
+                            <p class="text-[10px] text-brand-400 tracking-widest uppercase">বাংলাদেশ</p>
+                        </div>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed mb-5">বাংলাদেশের অন্যতম বিশ্বস্ত পেস্ট কন্ট্রোল সেবা প্রদানকারী কোম্পানি। আপনার ঘরকে পোকামাকড়মুক্ত রাখতে আমরা সর্বদা প্রস্তুত।</p>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/[0.05] hover:bg-brand-500/20 border border-white/[0.08] rounded-xl flex items-center justify-center transition-all">
+                            <i data-lucide="facebook" class="w-4 h-4 text-white/60 hover:text-brand-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/[0.05] hover:bg-brand-500/20 border border-white/[0.08] rounded-xl flex items-center justify-center transition-all">
+                            <i data-lucide="youtube" class="w-4 h-4 text-white/60 hover:text-brand-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/[0.05] hover:bg-brand-500/20 border border-white/[0.08] rounded-xl flex items-center justify-center transition-all">
+                            <i data-lucide="instagram" class="w-4 h-4 text-white/60 hover:text-brand-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/[0.05] hover:bg-brand-500/20 border border-white/[0.08] rounded-xl flex items-center justify-center transition-all">
+                            <i data-lucide="linkedin" class="w-4 h-4 text-white/60 hover:text-brand-400"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-5">সেবাসমূহ</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-white/40 text-sm hover:text-brand-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>তেলাপোকা দমন</a></li>
+                        <li><a href="#services" class="text-white/40 text-sm hover:text-brand-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>বিছানার উকুন দমন</a></li>
+                        <li><a href="#services" class="text-white/40 text-sm hover:text-brand-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>ইঁদুর দমন</a></li>
+                        <li><a href="#services" class="text-white/40 text-sm hover:text-brand-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>মশা দমন</a></li>
+                        <li><a href="#services" class="text-white/40 text-sm hover:text-brand-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>টার্মাইট দমন</a></li>
+                        <li><a href="#services" class="text-white/40 text-sm hover:text-brand-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>শিল্প পেস্ট কন্ট্রোল</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-5">দ্রুত লিংক</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-white/40 text-sm hover:text-brand-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>হোম</a></li>
+                        <li><a href="#about" class="text-white/40 text-sm hover:text-brand-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>আমাদের সম্পর্কে</a></li>
+                        <li><a href="#gallery" class="text-white/40 text-sm hover:text-brand-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>গ্যালারি</a></li>
+                        <li><a href="#testimonials" class="text-white/40 text-sm hover:text-brand-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>রিভিউ</a></li>
+                        <li><a href="#contact" class="text-white/40 text-sm hover:text-brand-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>যোগাযোগ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-5">সার্ভিস এরিয়া</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-white/40 text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3 text-brand-400"></i>ঢাকা</span></li>
+                        <li><span class="text-white/40 text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3 text-brand-400"></i>চট্টগ্রাম</span></li>
+                        <li><span class="text-white/40 text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3 text-brand-400"></i>সিলেট</span></li>
+                        <li><span class="text-white/40 text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3 text-brand-400"></i>রাজশাহী</span></li>
+                        <li><span class="text-white/40 text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3 text-brand-400"></i>খুলনা</span></li>
+                        <li><span class="text-white/40 text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3 text-brand-400"></i>সারা বাংলাদেশ</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="border-t border-white/5 pt-8 flex flex-col items-center gap-4">
+                <p class="text-white text-sm">© ২০২৫ SafeWall Pest Control Solution. সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- +8801738484235 -->
+    <a href="https://wa.me/+8801738484235" target="_blank" class="whatsapp-float w-16 h-16 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110">
+        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-32 right-8 z-[999] w-12 h-12 bg-dark-800 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:text-brand-400 hover:border-brand-500/30 transition-all opacity-0 translate-y-4 pointer-events-none" style="transition: all 0.3s ease;">
+        <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </button>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // ============ NAVBAR SCROLL EFFECT ============
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // ============ MOBILE MENU ============
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let menuOpen = false;
+
+        mobileToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('hidden');
+            mobileToggle.innerHTML = menuOpen 
+                ? '<i data-lucide="x" class="w-6 h-6"></i>' 
+                : '<i data-lucide="menu" class="w-6 h-6"></i>';
+            lucide.createIcons();
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuOpen = false;
+                mobileToggle.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                lucide.createIcons();
+            });
+        });
+
+        // ============ BACK TO TOP ============
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.style.opacity = '1';
+                backToTop.style.transform = 'translateY(0)';
+                backToTop.style.pointerEvents = 'auto';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.transform = 'translateY(16px)';
+                backToTop.style.pointerEvents = 'none';
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ============ SCROLL ANIMATIONS ============
+        const scrollElements = document.querySelectorAll('.scroll-animate');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                    scrollObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        scrollElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            scrollObserver.observe(el);
+        });
+
+        // ============ COUNTER ANIMATION ============
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000;
+                    const startTime = performance.now();
+                    
+                    function updateCounter(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const current = Math.floor(eased * target);
+                        
+                        // Convert to Bengali numerals
+                        const bengaliDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+                        const bengaliNum = current.toString().replace(/[0-9]/g, d => bengaliDigits[d]);
+                        counter.textContent = bengaliNum + (target === 100 ? '%' : target === 15 ? '+' : '+');
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        }
+                    }
+                    
+                    requestAnimationFrame(updateCounter);
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(c => counterObserver.observe(c));
+
+        // ============ FAQ ACCORDION ============
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const item = toggle.parentElement;
+                const content = item.querySelector('.faq-content');
+                const icon = toggle.querySelector('.faq-icon');
+                const isOpen = !content.classList.contains('hidden');
+
+                // Close all
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.faq-icon').forEach(i => {
+                    i.style.transform = 'rotate(0deg)';
+                });
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.style.borderColor = 'rgba(255,255,255,0.06)';
+                });
+
+                // Open clicked if was closed
+                if (!isOpen) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(45deg)';
+                    item.style.borderColor = 'rgba(34, 197, 94, 0.3)';
+                }
+            });
+        });
+
+        // ============ CONTACT FORM ============
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show toast
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = 'আপনার বার্তা সফলভাবে পাঠানো হয়েছে! আমরা শীঘ্রই যোগাযোগ করব।';
+            toast.classList.add('show');
+            
+            // Reset form
+            e.target.reset();
+            
+            // Hide toast after 4s
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        });
+
+        // ============ ACTIVE NAV LINK HIGHLIGHT ============
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-brand-400');
+                link.classList.add('text-white/80');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-brand-400');
+                    link.classList.remove('text-white/80');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
